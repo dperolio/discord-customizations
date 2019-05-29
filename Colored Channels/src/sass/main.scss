@@ -123,6 +123,8 @@ $classes: (
     div[style="height: 16px;"] {
       // Section 1
       // Target first category or channels, that is sometimes wrapped in a generic div
+      + #{class('categoryContainer')},
+      + #{class('channelContainer')},
       + div[draggable="true"] {
         #{class('categoryName')} {
           color: lighten(color('section-1'), $category-name-lighten)!important;
