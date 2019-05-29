@@ -25,9 +25,6 @@ $colors: (
 // This is used for the selected/hovered channel name and icons
 $white: #fff;
 
-// Lightens the category's name
-$category-name-lighten: 10%;
-
 // Change the opacity of the channel icon (# / speaker icon)
 // Only goes into effect if $icon-colors-option is set to 'enabled' below [default]
 $channel-icon-opacity: 0.5;
@@ -35,14 +32,16 @@ $channel-icon-opacity: 0.5;
 // Darkens the muted channel's icon and name
 $muted-darken: 20%;
 
-// Lightens the unread channel's icon and name
-$unread-lighten: 30%;
+// Increases color lightness of the unread channel's icon and name
+$unread-lighten: 20%;
+// Increases color saturation of the unread channel's icon and name
+$unread-saturate: 20%;
 
 // Change the opacity used for the hovered channel background
 $hovered-background-opacity: 0.15;
 
 // Change the opacity used for the selected channel background
-$selected-background-opacity: 0.6;
+$selected-background-opacity: 0.4;
 
 // Remove the following line or change the value to disabled
 // to use default Discord gray colors for the channel and category icons
@@ -127,7 +126,7 @@ $classes: (
       + #{class('channelContainer')},
       + div[draggable="true"] {
         #{class('categoryName')} {
-          color: lighten(color('section-1'), $category-name-lighten)!important;
+          color: color('section-1')!important;
         }
         @if $icon-colors-option == 'enabled' {
           #{class('categoryArrowIcon')} {
@@ -160,11 +159,11 @@ $classes: (
           }
           &#{class('channelUnread')} {
             #{class('channelName')} {
-              color: lighten(color('section-1'), $unread-lighten)!important;
+              color: saturate(lighten(color('section-1'), $unread-lighten), $unread-saturate)!important;
             }
             #{class('channelIcon')} {
               @if $icon-colors-option == 'enabled' {
-                color: lighten(color('section-1'), $unread-lighten)!important;
+                color: saturate(lighten(color('section-1'), $unread-lighten), $unread-saturate)!important;
               }
             }
           }
@@ -185,7 +184,7 @@ $classes: (
               color: $white!important;
             }
             #{class('channelContent')} {
-              background-color: rgba(color('section-1'), $selected-background-opacity)!important;
+              background-color: rgba(saturate(lighten(color('section-1'), $unread-lighten), $unread-saturate), $selected-background-opacity)!important;
             }
             #{class('channelIcon')} {
               color: $white!important;
@@ -197,7 +196,7 @@ $classes: (
           // Override the above hover
           &:hover:not(#{class('channelSelected')}) {
             #{class('channelContent')} {
-              background-color: rgba(color('section-1'), $hovered-background-opacity)!important;
+              background-color: rgba(saturate(lighten(color('section-1'), $unread-lighten), $unread-saturate), $hovered-background-opacity)!important;
             }
             @if $icon-colors-option == 'enabled' {
               #{class('channelActionIcon')} {
@@ -241,11 +240,11 @@ $classes: (
             }
             &#{class('channelUnread')} {
               #{class('channelName')} {
-                color: lighten(color('section-1'), $unread-lighten)!important;
+                color: saturate(lighten(color('section-1'), $unread-lighten), $unread-saturate)!important;
               }
               #{class('channelIcon')} {
                 @if $icon-colors-option == 'enabled' {
-                  color: lighten(color('section-1'), $unread-lighten)!important;
+                  color: saturate(lighten(color('section-1'), $unread-lighten), $unread-saturate)!important;
                 }
               }
             }
@@ -266,7 +265,7 @@ $classes: (
                 color: $white!important;
               }
               #{class('channelContent')} {
-                background-color: rgba(color('section-1'), $selected-background-opacity)!important;
+                background-color: rgba(saturate(lighten(color('section-1'), $unread-lighten), $unread-saturate), $selected-background-opacity)!important;
               }
               #{class('channelIcon')} {
                 color: $white!important;
@@ -278,7 +277,7 @@ $classes: (
             // Override the above hover
             &:hover:not(#{class('channelSelected')}) {
               #{class('channelContent')} {
-                background-color: rgba(color('section-1'), $hovered-background-opacity)!important;
+                background-color: rgba(saturate(lighten(color('section-1'), $unread-lighten), $unread-saturate), $hovered-background-opacity)!important;
               }
               @if $icon-colors-option == 'enabled' {
                 #{class('channelActionIcon')} {
@@ -305,7 +304,7 @@ $classes: (
           // Section #{$i}
           #{$sel} {
             #{class('categoryName')} {
-              color: lighten(color('section-#{$i}'), $category-name-lighten)!important;
+              color: color('section-#{$i}')!important;
             }
             @if $icon-colors-option == 'enabled' {
               #{class('categoryArrowIcon')} {
@@ -339,11 +338,11 @@ $classes: (
                 }
                 &#{class('channelUnread')} {
                   #{class('channelName')} {
-                    color: lighten(color('section-#{$i}'), $unread-lighten)!important;
+                    color: saturate(lighten(color('section-#{$i}'), $unread-lighten), $unread-saturate)!important;
                   }
                   #{class('channelIcon')} {
                     @if $icon-colors-option == 'enabled' {
-                      color: lighten(color('section-#{$i}'), $unread-lighten)!important;
+                      color: saturate(lighten(color('section-#{$i}'), $unread-lighten), $unread-saturate)!important;
                     }
                   }
                 }
@@ -364,7 +363,7 @@ $classes: (
                     color: $white!important;
                   }
                   #{class('channelContent')} {
-                    background-color: rgba(color('section-#{$i}'), $selected-background-opacity)!important;
+                    background-color: rgba(saturate(lighten(color('section-#{$i}'), $unread-lighten), $unread-saturate), $selected-background-opacity)!important;
                   }
                   #{class('channelIcon')} {
                     color: $white!important;
@@ -376,7 +375,7 @@ $classes: (
                 // Override the above hover
                 &:hover:not(#{class('channelSelected')}) {
                   #{class('channelContent')} {
-                    background-color: rgba(color('section-#{$i}'), $hovered-background-opacity)!important;
+                    background-color: rgba(saturate(lighten(color('section-#{$i}'), $unread-lighten), $unread-saturate), $hovered-background-opacity)!important;
                   }
                   @if $icon-colors-option == 'enabled' {
                     #{class('channelActionIcon')} {
