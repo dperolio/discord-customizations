@@ -46,7 +46,7 @@ $selected-background-opacity: 0.6;
 
 // Remove the following line or change the value to disabled
 // to use default Discord gray colors for the channel and category icons
-$icon-colors-option: 'disabled';
+$icon-colors-option: 'enabled';
 
 
 
@@ -113,7 +113,7 @@ $classes: (
     // `Create channel` plus icon
     #{class('categoryAddButtonIcon')} {
       polygon {
-        fill: currentColor;
+        fill: currentColor!important;
       }
     }
   }
@@ -125,44 +125,44 @@ $classes: (
       // Target first category or channels, that is sometimes wrapped in a generic div
       + div[draggable="true"] {
         #{class('categoryName')} {
-          color: lighten(color('section-1'), $category-name-lighten);
+          color: lighten(color('section-1'), $category-name-lighten)!important;
         }
         @if $icon-colors-option == 'enabled' {
           #{class('categoryArrowIcon')} {
-            color: #{color('section-1')};
+            color: #{color('section-1')}!important;
           }
           #{class('categoryAddButtonIcon')} {
-            color: #{color('section-1')};
+            color: #{color('section-1')}!important;
           }
         }
         #{class('channelWrapper')} {
           #{class('channelName')} {
-            color: #{color('section-1')};
+            color: #{color('section-1')}!important;
           }
           @if $icon-colors-option == 'enabled' {
             #{class('channelIcon')} {
-              color: rgba(color('section-1'), $channel-icon-opacity);
+              color: rgba(color('section-1'), $channel-icon-opacity)!important;
             }
             #{class('channelUserLimitWrapper')} {
-              color: rgba($white, 0.7);
+              color: rgba($white, 0.7)!important;
             }
             #{class('channelUserLimitUsers')} {
-              background-color: #{color('section-1')};
+              background-color: #{color('section-1')}!important;
             }
             #{class('channelUserLimitTotal')} {
-              background-color: darken(color('section-1'), 30%);
+              background-color: darken(color('section-1'), 30%)!important;
               &::after {
-                border-right-color: darken(color('section-1'), 30%);
+                border-right-color: darken(color('section-1'), 30%)!important;
               }
             }
           }
           &#{class('channelUnread')} {
             #{class('channelName')} {
-              color: lighten(color('section-1'), $unread-lighten);
+              color: lighten(color('section-1'), $unread-lighten)!important;
             }
             #{class('channelIcon')} {
               @if $icon-colors-option == 'enabled' {
-                color: lighten(color('section-1'), $unread-lighten);
+                color: lighten(color('section-1'), $unread-lighten)!important;
               }
             }
           }
@@ -170,47 +170,47 @@ $classes: (
             &#{class('channelLocked')},
             &#{class('channelMuted')} {
               #{class('channelName')} {
-                color: $white;
+                color: $white!important;
               }
               #{class('channelIcon')} {
-                color: $white;
+                color: $white!important;
               }
               #{class('channelActionIcon')} {
-                color: $white;
+                color: $white!important;
               }
             }
             #{class('channelName')} {
-              color: $white;
+              color: $white!important;
             }
             #{class('channelContent')} {
-              background-color: rgba(color('section-1'), $selected-background-opacity);
+              background-color: rgba(color('section-1'), $selected-background-opacity)!important;
             }
             #{class('channelIcon')} {
-              color: $white;
+              color: $white!important;
             }
             #{class('channelActionIcon')} {
-              color: $white;
+              color: $white!important;
             }
           }
           // Override the above hover
           &:hover:not(#{class('channelSelected')}) {
             #{class('channelContent')} {
-              background-color: rgba(color('section-1'), $hovered-background-opacity);
+              background-color: rgba(color('section-1'), $hovered-background-opacity)!important;
             }
             @if $icon-colors-option == 'enabled' {
               #{class('channelActionIcon')} {
-                color: #{color('section-1')};
+                color: #{color('section-1')}!important;
               }
             }
           }
           &#{class('channelLocked')},
           &#{class('channelMuted')} {
             #{class('channelName')} {
-              color: darken(color('section-1'), $muted-darken);
+              color: darken(color('section-1'), $muted-darken)!important;
             }
             #{class('channelIcon')} {
               @if $icon-colors-option == 'enabled' {
-                color: darken(color('section-1'), $muted-darken);
+                color: darken(color('section-1'), $muted-darken)!important;
               }
             }
           }
@@ -218,32 +218,32 @@ $classes: (
         ~ #{class('channelContainer')} {
           #{class('channelWrapper')} {
             #{class('channelName')} {
-              color: #{color('section-1')};
+              color: #{color('section-1')}!important;
             }
             @if $icon-colors-option == 'enabled' {
               #{class('channelIcon')} {
-                color: rgba(color('section-1'), $channel-icon-opacity);
+                color: rgba(color('section-1'), $channel-icon-opacity)!important;
               }
               #{class('channelUserLimitWrapper')} {
-                color: rgba($white, 0.7);
+                color: rgba($white, 0.7)!important;
               }
               #{class('channelUserLimitUsers')} {
-                background-color: #{color('section-1')};
+                background-color: #{color('section-1')}!important;
               }
               #{class('channelUserLimitTotal')} {
-                background-color: darken(color('section-1'), 30%);
+                background-color: darken(color('section-1'), 30%)!important;
                 &::after {
-                  border-right-color: darken(color('section-1'), 30%);
+                  border-right-color: darken(color('section-1'), 30%)!important;
                 }
               }
             }
             &#{class('channelUnread')} {
               #{class('channelName')} {
-                color: lighten(color('section-1'), $unread-lighten);
+                color: lighten(color('section-1'), $unread-lighten)!important;
               }
               #{class('channelIcon')} {
                 @if $icon-colors-option == 'enabled' {
-                  color: lighten(color('section-1'), $unread-lighten);
+                  color: lighten(color('section-1'), $unread-lighten)!important;
                 }
               }
             }
@@ -251,47 +251,47 @@ $classes: (
               &#{class('channelLocked')},
               &#{class('channelMuted')} {
                 #{class('channelName')} {
-                  color: $white;
+                  color: $white!important;
                 }
                 #{class('channelIcon')} {
-                  color: $white;
+                  color: $white!important;
                 }
                 #{class('channelActionIcon')} {
-                  color: $white;
+                  color: $white!important;
                 }
               }
               #{class('channelName')} {
-                color: $white;
+                color: $white!important;
               }
               #{class('channelContent')} {
-                background-color: rgba(color('section-1'), $selected-background-opacity);
+                background-color: rgba(color('section-1'), $selected-background-opacity)!important;
               }
               #{class('channelIcon')} {
-                color: $white;
+                color: $white!important;
               }
               #{class('channelActionIcon')} {
-                color: $white;
+                color: $white!important;
               }
             }
             // Override the above hover
             &:hover:not(#{class('channelSelected')}) {
               #{class('channelContent')} {
-                background-color: rgba(color('section-1'), $hovered-background-opacity);
+                background-color: rgba(color('section-1'), $hovered-background-opacity)!important;
               }
               @if $icon-colors-option == 'enabled' {
                 #{class('channelActionIcon')} {
-                  color: #{color('section-1')};
+                  color: #{color('section-1')}!important;
                 }
               }
             }
             &#{class('channelLocked')},
             &#{class('channelMuted')} {
               #{class('channelName')} {
-                color: darken(color('section-1'), $muted-darken);
+                color: darken(color('section-1'), $muted-darken)!important;
               }
               #{class('channelIcon')} {
                 @if $icon-colors-option == 'enabled' {
-                  color: darken(color('section-1'), $muted-darken);
+                  color: darken(color('section-1'), $muted-darken)!important;
                 }
               }
             }
@@ -303,45 +303,45 @@ $classes: (
           // Section #{$i}
           #{$sel} {
             #{class('categoryName')} {
-              color: lighten(color('section-#{$i}'), $category-name-lighten);
+              color: lighten(color('section-#{$i}'), $category-name-lighten)!important;
             }
             @if $icon-colors-option == 'enabled' {
               #{class('categoryArrowIcon')} {
-                color: #{color('section-#{$i}')};
+                color: #{color('section-#{$i}')}!important;
               }
               #{class('categoryAddButtonIcon')} {
-                color: #{color('section-#{$i}')};
+                color: #{color('section-#{$i}')}!important;
               }
             }
             ~ #{class('channelContainer')} {
               #{class('channelWrapper')} {
                 #{class('channelName')} {
-                  color: #{color('section-#{$i}')};
+                  color: #{color('section-#{$i}')}!important;
                 }
                 @if $icon-colors-option == 'enabled' {
                   #{class('channelIcon')} {
-                    color: rgba(color('section-#{$i}'), $channel-icon-opacity);
+                    color: rgba(color('section-#{$i}'), $channel-icon-opacity)!important;
                   }
                   #{class('channelUserLimitWrapper')} {
-                    color: rgba($white, 0.7);
+                    color: rgba($white, 0.7)!important;
                   }
                   #{class('channelUserLimitUsers')} {
-                    background-color: #{color('section-#{$i}')};
+                    background-color: #{color('section-#{$i}')}!important;
                   }
                   #{class('channelUserLimitTotal')} {
-                    background-color: darken(color('section-#{$i}'), 10%);
+                    background-color: darken(color('section-#{$i}'), 10%)!important;
                     &::after {
-                      border-right-color: darken(color('section-#{$i}'), 10%);
+                      border-right-color: darken(color('section-#{$i}'), 10%)!important;
                     }
                   }
                 }
                 &#{class('channelUnread')} {
                   #{class('channelName')} {
-                    color: lighten(color('section-#{$i}'), $unread-lighten);
+                    color: lighten(color('section-#{$i}'), $unread-lighten)!important;
                   }
                   #{class('channelIcon')} {
                     @if $icon-colors-option == 'enabled' {
-                      color: lighten(color('section-#{$i}'), $unread-lighten);
+                      color: lighten(color('section-#{$i}'), $unread-lighten)!important;
                     }
                   }
                 }
@@ -349,47 +349,47 @@ $classes: (
                   &#{class('channelLocked')},
                   &#{class('channelMuted')} {
                     #{class('channelName')} {
-                      color: $white;
+                      color: $white!important;
                     }
                     #{class('channelIcon')} {
-                      color: $white;
+                      color: $white!important;
                     }
                     #{class('channelActionIcon')} {
-                      color: $white;
+                      color: $white!important;
                     }
                   }
                   #{class('channelName')} {
-                    color: $white;
+                    color: $white!important;
                   }
                   #{class('channelContent')} {
-                    background-color: rgba(color('section-#{$i}'), $selected-background-opacity);
+                    background-color: rgba(color('section-#{$i}'), $selected-background-opacity)!important;
                   }
                   #{class('channelIcon')} {
-                    color: $white;
+                    color: $white!important;
                   }
                   #{class('channelActionIcon')} {
-                    color: $white;
+                    color: $white!important;
                   }
                 }
                 // Override the above hover
                 &:hover:not(#{class('channelSelected')}) {
                   #{class('channelContent')} {
-                    background-color: rgba(color('section-#{$i}'), $hovered-background-opacity);
+                    background-color: rgba(color('section-#{$i}'), $hovered-background-opacity)!important;
                   }
                   @if $icon-colors-option == 'enabled' {
                     #{class('channelActionIcon')} {
-                      color: #{color('section-#{$i}')};
+                      color: #{color('section-#{$i}')}!important;
                     }
                   }
                 }
                 &#{class('channelLocked')},
                 &#{class('channelMuted')} {
                   #{class('channelName')} {
-                    color: darken(color('section-#{$i}'), $muted-darken);
+                    color: darken(color('section-#{$i}'), $muted-darken)!important;
                   }
                   #{class('channelIcon')} {
                     @if $icon-colors-option == 'enabled' {
-                      color: darken(color('section-#{$i}'), $muted-darken);
+                      color: darken(color('section-#{$i}'), $muted-darken)!important;
                     }
                   }
                 }
