@@ -14,12 +14,12 @@ $colors: (
   section-4: #623fa6,
   section-5: #a63f84,
   section-6: #a6623f,
-  section-7: #3f48a6,
-  section-8: #a63f48,
-  section-9: #2acec8,
-  section-10: #9636aa,
-  section-11: #d93e3e,
-  section-12: #cea52a
+  section-7: #84a63f,
+  section-8: #3fa662,
+  section-9: #3f84a6,
+  section-10: #623fa6,
+  section-11: #a63f84,
+  section-12: #a6623f
 );
 
 // This is used for the selected/hovered channel name and icons
@@ -30,7 +30,7 @@ $white: #fff;
 $channel-icon-opacity: 0.5;
 
 // Darkens the muted channel's icon and name
-$muted-darken: 20%;
+$muted-darken: 10%;
 
 // Increases color lightness of the unread channel's icon and name
 $unread-lighten: 20%;
