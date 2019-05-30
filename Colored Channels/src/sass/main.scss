@@ -3,7 +3,7 @@
 ///  ==========================================================================
 
 // How many sections do you want colored? 12 is max, though you
-// can have more, but you will need to add to the $colors class map below
+// can have more, but you will need to add to the $colors map below
 $number-of-sections: 12;
 
 // Base colors used for the sections, feel free to modify to your liking
@@ -54,7 +54,7 @@ $icon-colors-option: 'enabled';
 ///  Core stuff that should not be edited
 ///  ==========================================================================
 
-// Discord channel variables map
+// Discord channel class map
 $classes: (
   channels: 'channels-Ie2l6A',
   scroller: 'scroller-2FKFPG',
